@@ -5,7 +5,7 @@ mkdir -p ~/.config
 # Karabiner-Elements
 ln -s $(pwd)/karabiner ~/.config
 
-# Aerospace
+# AeroSpace
 ln -s $(pwd)/aerospace ~/.config
 
 # Kitty
