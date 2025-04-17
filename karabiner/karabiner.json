@@ -296,7 +296,7 @@
                             {
                                 "description": "Set move window to workspace variable",
                                 "from": {
-                                    "key_code": "period",
+                                    "key_code": "hyphen",
                                     "modifiers": {
                                         "mandatory": ["left_option"],
                                         "optional": ["any"]
@@ -320,7 +320,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "period",
+                                        "key_code": "hyphen",
                                         "modifiers": ["left_option"]
                                     }
                                 ],
@@ -519,7 +519,7 @@
                             {
                                 "description": "Set switch workspace variable",
                                 "from": {
-                                    "key_code": "comma",
+                                    "key_code": "m",
                                     "modifiers": {
                                         "mandatory": ["left_option"],
                                         "optional": ["any"]
