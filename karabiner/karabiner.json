@@ -80,7 +80,7 @@
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -103,7 +103,7 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "f",
-                                        "modifiers": ["left_option"]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -120,7 +120,7 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -139,7 +139,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -158,7 +158,7 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -177,7 +177,7 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -187,9 +187,9 @@
                             {
                                 "description": "Set move command variable",
                                 "from": {
-                                    "key_code": "g",
+                                    "key_code": "m",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -211,8 +211,8 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "g",
-                                        "modifiers": ["left_option"]
+                                        "key_code": "m",
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -229,7 +229,7 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -248,7 +248,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -267,7 +267,7 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -286,7 +286,7 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -294,18 +294,18 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Set move window to workspace variable",
+                                "description": "Set workspace command variable",
                                 "from": {
-                                    "key_code": "hyphen",
+                                    "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "aerospace_move_to_workspace_command",
+                                            "name": "aerospace_workspace_command",
                                             "value": 1
                                         }
                                     }
@@ -313,230 +313,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "aerospace_move_to_workspace_command",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 1",
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 2",
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 2" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 3",
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 3" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 4",
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 4" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 5",
-                                "from": {
-                                    "key_code": "5",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 5" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 6",
-                                "from": {
-                                    "key_code": "6",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 6" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 7",
-                                "from": {
-                                    "key_code": "7",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 7" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 8",
-                                "from": {
-                                    "key_code": "8",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 8" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 9",
-                                "from": {
-                                    "key_code": "9",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 9" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "aerospace_move_to_workspace_command",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Move window to workspace 0",
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 0" }],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Set switch workspace variable",
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "aerospace_switch_workspace_command",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "aerospace_switch_workspace_command",
+                                            "name": "aerospace_workspace_command",
                                             "value": 0
                                         }
                                     }
@@ -547,7 +324,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -555,10 +332,7 @@
                                 "description": "Switch to workspace 1",
                                 "from": {
                                     "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 1" }],
                                 "type": "basic"
@@ -566,7 +340,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -574,10 +348,7 @@
                                 "description": "Switch to workspace 2",
                                 "from": {
                                     "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 2" }],
                                 "type": "basic"
@@ -585,7 +356,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -593,10 +364,7 @@
                                 "description": "Switch to workspace 3",
                                 "from": {
                                     "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 3" }],
                                 "type": "basic"
@@ -604,7 +372,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -612,10 +380,7 @@
                                 "description": "Switch to workspace 4",
                                 "from": {
                                     "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 4" }],
                                 "type": "basic"
@@ -623,7 +388,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -631,10 +396,7 @@
                                 "description": "Switch to workspace 5",
                                 "from": {
                                     "key_code": "5",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 5" }],
                                 "type": "basic"
@@ -642,7 +404,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -650,10 +412,7 @@
                                 "description": "Switch to workspace 6",
                                 "from": {
                                     "key_code": "6",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 6" }],
                                 "type": "basic"
@@ -661,7 +420,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -669,10 +428,7 @@
                                 "description": "Switch to workspace 7",
                                 "from": {
                                     "key_code": "7",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 7" }],
                                 "type": "basic"
@@ -680,7 +436,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -688,10 +444,7 @@
                                 "description": "Switch to workspace 8",
                                 "from": {
                                     "key_code": "8",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 8" }],
                                 "type": "basic"
@@ -699,7 +452,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -707,10 +460,7 @@
                                 "description": "Switch to workspace 9",
                                 "from": {
                                     "key_code": "9",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 9" }],
                                 "type": "basic"
@@ -718,7 +468,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "aerospace_switch_workspace_command",
+                                        "name": "aerospace_workspace_command",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -726,12 +476,199 @@
                                 "description": "Switch to workspace 0",
                                 "from": {
                                     "key_code": "0",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 0" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 1 and focus",
+                                "from": {
+                                    "key_code": "1",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option", "shift"],
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace --auto-back-and-forth 0" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 2 and focus",
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 2" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 3 and focus",
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 3" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 4 and focus",
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 4" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 5 and focus",
+                                "from": {
+                                    "key_code": "5",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 5" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 6 and focus",
+                                "from": {
+                                    "key_code": "6",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 6" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 7 and focus",
+                                "from": {
+                                    "key_code": "7",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 7" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 8 and focus",
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 8" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 9 and focus",
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 9" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "aerospace_workspace_command",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Move window to workspace 0 and focus",
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": {
+                                        "mandatory": ["option", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace --focus-follows-window 0" }],
                                 "type": "basic"
                             },
                             {
@@ -739,7 +676,7 @@
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -762,7 +699,7 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "r",
-                                        "modifiers": ["left_option"]
+                                        "modifiers": ["option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -779,7 +716,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -798,47 +735,11 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["option"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart +50" }],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Minimize window",
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace macos-native-minimize" }],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Maximize window",
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["left_option", "left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace macos-native-maximize" }],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Close window",
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/aerospace close" }],
                                 "type": "basic"
                             }
                         ]
