@@ -192,6 +192,7 @@ outer.right =      12
 Discord = 'secondary'
 Terminal = 'secondary'
 Gaming = 'secondary'
+LINE = 'main'
 
 
 # Floating Windows
