@@ -188,6 +188,13 @@ outer.right =      12
 # cmd-h = [] # Disable "hide application"
 # cmd-alt-h = [] # Disable "hide others"
 
+[workspace-to-monitor-force-assignment]
+Discord = 'secondary'
+Terminal = 'secondary'
+Gaming = 'secondary'
+
+
+# Floating Windows
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
@@ -200,3 +207,55 @@ run = 'layout floating'
 if.app-id = 'com.google.Chrome'
 if.window-title-regex-substring = 'Picture in Picture'
 run = 'layout floating'
+
+# Discord
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+check-further-callbacks = true
+run = 'move-node-to-workspace Discord'
+
+# LINE
+[[on-window-detected]]
+if.app-id = 'jp.naver.line.mac'
+check-further-callbacks = true
+run = 'move-node-to-workspace LINE'
+
+# Terminal
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+check-further-callbacks = true
+run = 'move-node-to-workspace Terminal'
+
+# Gaming
+[[on-window-detected]]
+if.window-title-regex-substring = 'Minecraft'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'org.prismlauncher.PrismLauncher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.mojang.minecraftlauncher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+# Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+check-further-callbacks = true
+run = 'move-node-to-workspace Notion'
+
+# Calendar
+[[on-window-detected]]
+if.app-id = 'com.cron.electron'
+check-further-callbacks = true
+run = 'move-node-to-workspace Calendar'
+
