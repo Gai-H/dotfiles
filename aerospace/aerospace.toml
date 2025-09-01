@@ -191,7 +191,7 @@ outer.right =      12
 [workspace-to-monitor-force-assignment]
 Discord = 'secondary'
 Terminal = 'secondary'
-Gaming = 'secondary'
+Gaming = 'main'
 LINE = 'main'
 
 
