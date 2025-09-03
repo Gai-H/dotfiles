@@ -17,3 +17,6 @@ ln -s $(pwd)/borders ~/.config
 # yazi
 ln -s $(pwd)/yazi ~/.config
 
+# lazygit
+ln -s $(pwd)/lazygit ~/.config
+
