@@ -244,6 +244,16 @@ check-further-callbacks = true
 run = 'move-node-to-workspace Gaming'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Lunar Client'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.moonsworth.client'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam'
 check-further-callbacks = true
 run = 'move-node-to-workspace Gaming'
