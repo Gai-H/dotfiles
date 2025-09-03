@@ -20,3 +20,6 @@ ln -s $(pwd)/yazi ~/.config
 # lazygit
 ln -s $(pwd)/lazygit ~/.config
 
+# eza
+ln -s $(pwd)/eza ~/.config
+
