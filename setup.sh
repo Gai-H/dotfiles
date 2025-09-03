@@ -13,3 +13,7 @@ ln -s $(pwd)/kitty ~/.config
 
 # Border
 ln -s $(pwd)/borders ~/.config
+
+# yazi
+ln -s $(pwd)/yazi ~/.config
+
