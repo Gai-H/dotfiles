@@ -189,10 +189,14 @@ outer.right =      12
 # cmd-alt-h = [] # Disable "hide others"
 
 [workspace-to-monitor-force-assignment]
-Discord = 'secondary'
-Terminal = 'secondary'
 Gaming = 'main'
 LINE = 'main'
+Notion = 'main'
+Calendar = 'main'
+Discord = 'secondary'
+Terminal = 'secondary'
+VSCode = 'secondary'
+IDE = 'secondary'
 
 
 # Floating Windows
@@ -269,4 +273,31 @@ run = 'move-node-to-workspace Notion'
 if.app-id = 'com.cron.electron'
 check-further-callbacks = true
 run = 'move-node-to-workspace Calendar'
+
+# VSCode
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+check-further-callbacks = true
+run = 'move-node-to-workspace VSCode'
+
+# IDE
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.goland'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.pycharm'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rustrover'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
 
