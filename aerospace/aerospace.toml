@@ -301,3 +301,8 @@ if.app-id = 'com.jetbrains.rustrover'
 check-further-callbacks = true
 run = 'move-node-to-workspace IDE'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
