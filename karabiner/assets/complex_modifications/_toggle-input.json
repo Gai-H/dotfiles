@@ -1,49 +1,74 @@
 {
-    "description": "Toggle Input",
-    "manipulators": [
+  "title": "Toggle Input",
+  "rules": [
+    {
+      "description": "Toggle Input",
+      "manipulators": [
         {
-            "conditions": [
-                {
-                    "input_sources": [{ "language": "^en$" }],
-                    "type": "input_source_if"
-                }
-            ],
-            "from": {
-                "key_code": "japanese_pc_xfer",
-                "modifiers": { "optional": ["any"] }
-            },
-            "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-            "to": [
-                {
-                    "key_code": "japanese_pc_xfer",
-                    "lazy": true
-                }
-            ],
-            "to_if_alone": [{ "key_code": "japanese_kana" }],
-            "to_if_held_down": [{ "key_code": "japanese_pc_xfer" }],
-            "type": "basic"
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_pc_xfer",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "japanese_pc_xfer",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            { "key_code": "japanese_kana" }
+          ],
+          "to_if_held_down": [
+            { "key_code": "japanese_pc_xfer" }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                { "language": "^en$" }
+              ]
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          }
         },
         {
-            "conditions": [
-                {
-                    "input_sources": [{ "language": "^ja$" }],
-                    "type": "input_source_if"
-                }
-            ],
-            "from": {
-                "key_code": "japanese_pc_nfer",
-                "modifiers": { "optional": ["any"] }
-            },
-            "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-            "to": [
-                {
-                    "key_code": "japanese_pc_nfer",
-                    "lazy": true
-                }
-            ],
-            "to_if_alone": [{ "key_code": "japanese_eisuu" }],
-            "to_if_held_down": [{ "key_code": "japanese_pc_nfer" }],
-            "type": "basic"
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_pc_nfer",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "japanese_pc_nfer",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            { "key_code": "japanese_eisuu" }
+          ],
+          "to_if_held_down": [
+            { "key_code": "japanese_pc_nfer" }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                { "language": "^ja$" }
+              ]
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          }
         }
-    ]
+      ]
+    }
+  ]
 }
