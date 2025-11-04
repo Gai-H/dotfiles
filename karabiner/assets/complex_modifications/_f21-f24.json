@@ -1,8 +1,8 @@
 {
-  "title": "Left Modifiers → F21–F24 + Virtual Variables + Silence when pressed alone",
+  "title": "Left modifiers -> F21-F24",
   "rules": [
     {
-      "description": "Map Left Command → F21, Left Option → F22, Left Control → F23, Caps Lock → F24 (each with variable)",
+      "description": "Left Command → F21, Left Option → F22, Left Control → F23, Caps Lock → F24",
       "manipulators": [
         {
           "type": "basic",

@@ -1,8 +1,8 @@
 {
-  "title": "F24 (virtual) → Command shortcuts",
+  "title": "F24_Global",
   "rules": [
     {
-      "description": "Use Caps/F24 as virtual Command modifier only if other virtual modifiers are off",
+      "description": "F24_Global",
       "manipulators": [
         {
           "type": "basic",
@@ -22,7 +22,8 @@
             { "type": "variable_if", "name": "f24_virtual", "value": 1 },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
             { "type": "variable_if", "name": "f22_virtual", "value": 0 },
-            { "type": "variable_if", "name": "f23_virtual", "value": 0 }
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "frontmost_application_unless", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] }
           ],
           "to": [ { "key_code": "x", "modifiers": ["command"] } ]
         },

@@ -1,8 +1,8 @@
 {
-  "title": "Chrome",
+  "title": "App_Chrome",
   "rules": [
     {
-      "description": "Chrome",
+      "description": "App_Chrome",
       "manipulators": [
         {
           "type": "basic",
