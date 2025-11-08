@@ -1,0 +1,100 @@
+{
+  "title": "F21_Aerospace",
+  "rules": [
+    {
+      "description": "F21_Aerospace",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "j", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors --ignore-floating left"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "k", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors --ignore-floating right"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "j", "modifiers": { "mandatory": ["shift"], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace move --boundaries all-monitors-outer-frame --boundaries-action stop left"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "k", "modifiers": { "mandatory": ["shift"], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace move --boundaries all-monitors-outer-frame --boundaries-action stop right"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "h", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace resize smart -30"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "l", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/aerospace resize smart +30"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}
