@@ -397,6 +397,39 @@
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart +30" }],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "f21_virtual",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "f22_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "f23_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "f24_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/aerospace_minimize-and-focus.sh" }],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1071,7 +1104,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/kitty/karabiner-kitty-bridge.sh close_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh close_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1110,7 +1143,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/kitty/karabiner-kitty-bridge.sh new_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh new_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1149,7 +1182,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/kitty/karabiner-kitty-bridge.sh previous_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh previous_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1188,7 +1221,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/kitty/karabiner-kitty-bridge.sh next_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh next_tab" }],
                                 "type": "basic"
                             }
                         ]

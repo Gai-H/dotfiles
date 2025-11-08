@@ -4,7 +4,7 @@ set -euo pipefail
 notify() {
   # Show a macOS notification with the given message
   local message="$1"
-  /usr/bin/osascript -e "display notification \"${message}\" with title \"karabiner-kitty-bridge\""
+  /usr/bin/osascript -e "display notification \"${message}\" with title \"Kitty Tweak\""
 }
 
 # ---- Validate argument ----

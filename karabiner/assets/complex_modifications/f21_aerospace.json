@@ -93,6 +93,21 @@
             { "type": "variable_if", "name": "f23_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 }
           ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "m", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [
+            {
+              "shell_command": "~/.config/karabiner/tweaks/aerospace_minimize-and-focus.sh"
+            }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
         }
       ]
     }
