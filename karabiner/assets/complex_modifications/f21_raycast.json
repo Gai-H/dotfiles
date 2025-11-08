@@ -1,8 +1,8 @@
 {
-  "title": "App_Raycast",
+  "title": "F21_Raycast",
   "rules": [
     {
-      "description": "App_Raycast",
+      "description": "F21_Raycast",
       "manipulators": [
         {
           "type": "basic",

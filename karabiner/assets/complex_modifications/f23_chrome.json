@@ -1,8 +1,8 @@
 {
-  "title": "App_Chrome",
+  "title": "F23_Chrome",
   "rules": [
     {
-      "description": "App_Chrome",
+      "description": "F23_Chrome",
       "manipulators": [
         {
           "type": "basic",

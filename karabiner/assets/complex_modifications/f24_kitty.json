@@ -1,8 +1,8 @@
 {
-  "title": "App_Kitty (F24)",
+  "title": "F24_Kitty",
   "rules": [
     {
-      "description": "App_Kitty (F24)",
+      "description": "F24_Kitty",
       "manipulators": [
         {
           "type": "basic",
