@@ -92,6 +92,17 @@
             { "type": "variable_if", "name": "f23_virtual", "value": 0 }
           ],
           "to": [ { "key_code": "right_arrow", "modifiers": ["command"] } ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "enter", "modifiers": { "optional": [] } },
+          "conditions": [
+            { "type": "variable_if", "name": "f24_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 }
+          ],
+          "to": [ { "key_code": "enter", "modifiers": ["command"] } ]
         }
       ]
     }

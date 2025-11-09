@@ -1517,6 +1517,41 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "f24_virtual",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "f21_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "f22_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "f23_virtual",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "enter",
+                                    "modifiers": { "optional": [] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "enter",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
