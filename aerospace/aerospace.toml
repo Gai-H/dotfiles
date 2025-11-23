@@ -191,7 +191,6 @@ outer.right =      12
 [workspace-to-monitor-force-assignment]
 Gaming = 'main'
 LINE = 'main'
-Notion = 'main'
 Calendar = 'main'
 Discord = 'secondary'
 Terminal = 'secondary'
