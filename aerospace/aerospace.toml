@@ -31,42 +31,11 @@ outer.right = 12
 Gaming = 'main'
 LINE = 'main'
 Calendar = 'main'
+Mail = 'main'
 Discord = 'secondary'
 Terminal = 'secondary'
 VSCode = 'secondary'
 IDE = 'secondary'
-
-# Floating Windows
-[[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.superultra.Homerow'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-if.window-title-regex-substring = 'Picture in Picture'
-run = 'layout floating'
-
-# Discord
-[[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
-check-further-callbacks = true
-run = 'move-node-to-workspace Discord'
-
-# LINE
-[[on-window-detected]]
-if.app-id = 'jp.naver.line.mac'
-check-further-callbacks = true
-run = 'move-node-to-workspace LINE'
-
-# Terminal
-[[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-check-further-callbacks = true
-run = 'move-node-to-workspace Terminal'
 
 # Gaming
 [[on-window-detected]]
@@ -99,17 +68,35 @@ if.app-id = 'com.valvesoftware.steam'
 check-further-callbacks = true
 run = 'move-node-to-workspace Gaming'
 
-# Notion
+# LINE
 [[on-window-detected]]
-if.app-id = 'notion.id'
+if.app-id = 'jp.naver.line.mac'
 check-further-callbacks = true
-run = 'move-node-to-workspace Notion'
+run = 'move-node-to-workspace LINE'
 
 # Calendar
 [[on-window-detected]]
 if.app-id = 'com.cron.electron'
 check-further-callbacks = true
 run = 'move-node-to-workspace Calendar'
+
+# Mail
+[[on-window-detected]]
+if.app-id = 'notion.mail.id'
+check-further-callbacks = true
+run = 'move-node-to-workspace Mail'
+
+# Discord
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+check-further-callbacks = true
+run = 'move-node-to-workspace Discord'
+
+# Terminal
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+check-further-callbacks = true
+run = 'move-node-to-workspace Terminal'
 
 # VSCode
 [[on-window-detected]]
@@ -142,4 +129,30 @@ run = 'move-node-to-workspace IDE'
 if.app-id = 'com.apple.dt.Xcode'
 check-further-callbacks = true
 run = 'move-node-to-workspace IDE'
+
+# Anki
+[[on-window-detected]]
+if.app-id = 'net.ankiweb.launcher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Anki'
+
+# Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+check-further-callbacks = true
+run = 'move-node-to-workspace Notion'
+
+# Floating Windows
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.superultra.Homerow'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = 'Picture in Picture'
+run = 'layout floating'
 
