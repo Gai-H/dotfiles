@@ -9,9 +9,9 @@ notify() {
 
 # ---- Validate argument ----
 case "${1:-}" in
-  new_tab|close_tab|next_tab|previous_tab) action="$1" ;;
+  new_tab|close_tab|next_tab|previous_tab|new_window|close_window|next_window|previous_window) action="$1" ;;
   *)
-    notify "Usage: karabiner-kitty-bridge.sh {new_tab|close_tab|next_tab|previous_tab}"
+    notify "Usage: karabiner-kitty-bridge.sh {new_tab|close_tab|next_tab|previous_tab|new_window|close_window|next_window|previous_window}"
     exit 2
     ;;
 esac

@@ -9,6 +9,86 @@
           "from": {
             "key_code": "w",
             "modifiers": {
+              "mandatory": [],
+              "optional": []
+            }
+          },
+          "to": [
+            { "shell_command": "~/.config/karabiner/tweaks/kitty.sh close_window" }
+          ],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [],
+              "optional": []
+            }
+          },
+          "to": [
+            { "shell_command": "~/.config/karabiner/tweaks/kitty.sh new_window" }
+          ],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [],
+              "optional": []
+            }
+          },
+          "to": [
+            { "shell_command": "~/.config/karabiner/tweaks/kitty.sh previous_window" }
+          ],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [],
+              "optional": []
+            }
+          },
+          "to": [
+            { "shell_command": "~/.config/karabiner/tweaks/kitty.sh next_window" }
+          ],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
               "mandatory": ["shift"],
               "optional": []
             }
