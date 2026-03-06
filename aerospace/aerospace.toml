@@ -33,6 +33,7 @@ LINE = 'main'
 Calendar = 'main'
 Mail = 'main'
 Discord = 'secondary'
+Teams = 'secondary'
 Terminal = 'secondary'
 VSCode = 'secondary'
 IDE = 'secondary'
@@ -91,6 +92,12 @@ run = 'move-node-to-workspace Mail'
 if.app-id = 'com.hnc.Discord'
 check-further-callbacks = true
 run = 'move-node-to-workspace Discord'
+
+# Teams
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+check-further-callbacks = true
+run = 'move-node-to-workspace Teams'
 
 # Terminal
 [[on-window-detected]]
