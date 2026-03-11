@@ -1,0 +1,170 @@
+after-login-command = []
+after-startup-command = []
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+exec-on-workspace-change = ['/bin/bash', '-c', '~/.config/karabiner/tweaks/aerospace_alt-tab-workspaces/record-workspace-history.sh']
+
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+preset = 'qwerty'
+
+[gaps]
+inner.horizontal = 12
+inner.vertical = 12
+outer.left = 12
+outer.bottom = 12 
+outer.top = 12
+outer.right = 12
+
+[workspace-to-monitor-force-assignment]
+Gaming = 'main'
+LINE = 'main'
+Calendar = 'main'
+Mail = 'main'
+Discord = 'secondary'
+Teams = 'secondary'
+Terminal = 'secondary'
+VSCode = 'secondary'
+IDE = 'secondary'
+
+# Gaming
+[[on-window-detected]]
+if.window-title-regex-substring = 'Minecraft'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'org.prismlauncher.PrismLauncher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.mojang.minecraftlauncher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Lunar Client'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.moonsworth.client'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+check-further-callbacks = true
+run = 'move-node-to-workspace Gaming'
+
+# LINE
+[[on-window-detected]]
+if.app-id = 'jp.naver.line.mac'
+check-further-callbacks = true
+run = 'move-node-to-workspace LINE'
+
+# Calendar
+[[on-window-detected]]
+if.app-id = 'com.cron.electron'
+check-further-callbacks = true
+run = 'move-node-to-workspace Calendar'
+
+# Mail
+[[on-window-detected]]
+if.app-id = 'notion.mail.id'
+check-further-callbacks = true
+run = 'move-node-to-workspace Mail'
+
+# Discord
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+check-further-callbacks = true
+run = 'move-node-to-workspace Discord'
+
+# Teams
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+check-further-callbacks = true
+run = 'move-node-to-workspace Teams'
+
+# Terminal
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+check-further-callbacks = true
+run = 'move-node-to-workspace Terminal'
+
+# VSCode
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+check-further-callbacks = true
+run = 'move-node-to-workspace VSCode'
+
+# IDE
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.goland'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.pycharm'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rustrover'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+check-further-callbacks = true
+run = 'move-node-to-workspace IDE'
+
+# Anki
+[[on-window-detected]]
+if.app-id = 'net.ankiweb.launcher'
+check-further-callbacks = true
+run = 'move-node-to-workspace Anki'
+
+# Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+check-further-callbacks = true
+run = 'move-node-to-workspace Notion'
+
+# Floating Windows
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.superultra.Homerow'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = 'Picture in Picture'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'layout floating'
+
+

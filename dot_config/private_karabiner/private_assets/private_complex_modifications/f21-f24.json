@@ -1,0 +1,61 @@
+{
+  "title": "Left modifiers -> F21-F24",
+  "rules": [
+    {
+      "description": "Left Command → F21, Left Option → F22, Left Control → F23, Caps Lock → F24",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "left_command", "modifiers": { "optional": ["any"] } },
+          "to": [
+            { "key_code": "f21" },
+            { "set_variable": { "name": "f21_virtual", "value": 1 } }
+          ],
+          "to_after_key_up": [
+            { "set_variable": { "name": "f21_virtual", "value": 0 } }
+          ],
+          "to_if_alone": [ { "key_code": "vk_none" } ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "left_option", "modifiers": { "optional": ["any"] } },
+          "to": [
+            { "key_code": "f22" },
+            { "set_variable": { "name": "f22_virtual", "value": 1 } }
+          ],
+          "to_after_key_up": [
+            { "set_variable": { "name": "f22_virtual", "value": 0 } }
+          ],
+          "to_if_alone": [ { "key_code": "vk_none" } ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "left_control", "modifiers": { "optional": ["any"] } },
+          "to": [
+            { "key_code": "f23" },
+            { "set_variable": { "name": "f23_virtual", "value": 1 } }
+          ],
+          "to_after_key_up": [
+            { "set_variable": { "name": "f23_virtual", "value": 0 } }
+          ],
+          "to_if_alone": [ { "key_code": "vk_none" } ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+          "to": [
+            { "key_code": "f24" },
+            { "set_variable": { "name": "f24_virtual", "value": 1 } }
+          ],
+          "to_after_key_up": [
+            { "set_variable": { "name": "f24_virtual", "value": 0 } }
+          ],
+          "to_if_alone": [ { "key_code": "vk_none" } ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "basic.to_if_alone_timeout_milliseconds": 300
+  }
+}
