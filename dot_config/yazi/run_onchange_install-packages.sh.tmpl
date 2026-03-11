@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install packages when the contents of package.toml or yazi.toml changes
+# ref: https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#run-a-script-when-the-contents-of-another-file-changes
+# package.toml hash: {{ include "dot_config/yazi/package.toml" | sha256sum }}
+# yazi.toml hash: {{ include "dot_config/yazi/yazi.toml" | sha256sum }}
+ya pkg install
+
