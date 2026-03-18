@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "Lua": {
+    "runtime": {
+      "version": "LuaJIT"
+    },
+    "diagnostics": {
+      "globals": ["vim"]
+    },
+    "workspace": {
+      "library": ["lua", "$VIMRUNTIME", "~/.local/share/nvim/lazy/lazy.nvim/lua"]
+    }
+  }
+}
+
