@@ -58,6 +58,11 @@ g.loaded_netrwPlugin = 1
 -- escape from terminal mode
 vim.keymap.set('t', 'fj', "<C-`\\><C-n>", { noremap = true, silent = true })
 
+-- buffer navigation
+vim.keymap.set("n", "<M-j>", "<cmd>bprevious<CR>", { noremap = true, silent = true, desc = "Previous buffer" })
+vim.keymap.set("n", "<M-k>", "<cmd>bnext<CR>", { noremap = true, silent = true, desc = "Next buffer" })
+vim.keymap.set("n", "<M-w>", "<cmd>bdelete<CR>", { noremap = true, silent = true, desc = "Delete buffer" })
+vim.keymap.set("n", "<M-t>", "<cmd>enew<CR>", { noremap = true, silent = true, desc = "New buffer" })
+
 -- exrc
 vim.o.exrc = true
-

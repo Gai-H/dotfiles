@@ -1,0 +1,58 @@
+{
+  "title": "F22_Neovim",
+  "rules": [
+    {
+      "description": "F22_Neovim",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "j", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "j", "modifiers": ["option"] }],
+          "conditions": [
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 },
+            { "type": "variable_if", "name": "neovim_active", "value": true }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "k", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "k", "modifiers": ["option"] }],
+          "conditions": [
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 },
+            { "type": "variable_if", "name": "neovim_active", "value": true }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "w", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "w", "modifiers": ["option"] }],
+          "conditions": [
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 },
+            { "type": "variable_if", "name": "neovim_active", "value": true }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "t", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "t", "modifiers": ["option"] }],
+          "conditions": [
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 },
+            { "type": "variable_if", "name": "neovim_active", "value": true }
+          ]
+        }
+      ]
+    }
+  ]
+}
