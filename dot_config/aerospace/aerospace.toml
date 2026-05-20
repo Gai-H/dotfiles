@@ -137,6 +137,11 @@ if.app-id = 'com.apple.dt.Xcode'
 check-further-callbacks = true
 run = 'move-node-to-workspace IDE'
 
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
+check-further-callbacks = true
+run = 'move-node-to-workspace Codex'
+
 # Anki
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.launcher'
