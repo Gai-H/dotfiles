@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+config_file="{{ .chezmoi.homeDir }}/.config/hammerspoon/init.lua"
+
+mkdir -p "$(dirname "$config_file")"
+/usr/bin/defaults write org.hammerspoon.Hammerspoon MJConfigFile "$config_file"
+echo "Configured Hammerspoon MJConfigFile: $config_file"
+
