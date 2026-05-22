@@ -12,7 +12,7 @@ default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-exec-on-workspace-change = ['/bin/bash', '-c', '~/.config/karabiner/tweaks/aerospace_alt-tab-workspaces/record-workspace-history.sh']
+exec-on-workspace-change = ['/bin/bash', '-c', '~/.config/aerospace/record-workspace-history.sh']
 
 automatically-unhide-macos-hidden-apps = false
 

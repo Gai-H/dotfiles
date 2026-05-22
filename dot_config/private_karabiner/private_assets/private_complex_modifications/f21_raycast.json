@@ -31,34 +31,17 @@
           },
           "to": [
             {
-              "shell_command": "~/.config/karabiner/tweaks/aerospace_alt-tab-workspaces/launch-raycast-extension.sh 1"
+              "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f21_raycast/launch-aerospace-workspace-switcher-extension.sh 1"
             }
           ],
           "conditions": [
-            {
-              "type": "variable_if",
-              "name": "f21_virtual",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "f22_virtual",
-              "value": 0
-            },
-            {
-              "type": "variable_if",
-              "name": "f23_virtual",
-              "value": 0
-            },
-            {
-              "type": "variable_if",
-              "name": "f24_virtual",
-              "value": 0
-            }
+            { "type": "variable_if", "name": "f21_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
           ]
         }
       ]
     }
   ]
 }
-

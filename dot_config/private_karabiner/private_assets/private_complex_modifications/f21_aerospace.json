@@ -99,7 +99,7 @@
           "from": { "key_code": "m", "modifiers": { "mandatory": [], "optional": [] } },
           "to": [
             {
-              "shell_command": "~/.config/karabiner/tweaks/aerospace_minimize-and-focus.sh"
+              "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f21_aerospace/minimize-and-focus.sh"
             }
           ],
           "conditions": [
