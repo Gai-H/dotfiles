@@ -409,7 +409,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/aerospace_minimize-and-focus.sh" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f21_aerospace/minimize-and-focus.sh" }],
                                 "type": "basic"
                             }
                         ]
@@ -479,7 +479,7 @@
                                     "key_code": "tab",
                                     "modifiers": { "optional": [] }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/aerospace_alt-tab-workspaces/launch-raycast-extension.sh 1" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f21_raycast/launch-aerospace-workspace-switcher-extension.sh 1" }],
                                 "type": "basic"
                             }
                         ]
@@ -1320,7 +1320,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh close_window" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh close_window" }],
                                 "type": "basic"
                             },
                             {
@@ -1359,7 +1359,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh new_window" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh new_window" }],
                                 "type": "basic"
                             },
                             {
@@ -1398,7 +1398,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh previous_window" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh previous_window" }],
                                 "type": "basic"
                             },
                             {
@@ -1437,7 +1437,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh next_window" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh next_window" }],
                                 "type": "basic"
                             },
                             {
@@ -1476,7 +1476,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh close_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh close_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1515,7 +1515,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh new_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh new_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1554,7 +1554,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh previous_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh previous_tab" }],
                                 "type": "basic"
                             },
                             {
@@ -1593,7 +1593,7 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "shell_command": "~/.config/karabiner/tweaks/kitty.sh next_tab" }],
+                                "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh next_tab" }],
                                 "type": "basic"
                             }
                         ]
