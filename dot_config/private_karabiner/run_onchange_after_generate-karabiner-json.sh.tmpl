@@ -1,0 +1,79 @@
+#!/bin/bash
+set -euo pipefail
+
+# Re-run when generation inputs change.
+# karabiner.base.json hash: {{ include "dot_config/private_karabiner/karabiner.base.json" | sha256sum }}
+# complex-modification-order.txt hash: {{ include "dot_config/private_karabiner/complex-modification-order.txt" | sha256sum }}
+# backslash.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/backslash.json" | sha256sum }}
+# toggle-input.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/toggle-input.json" | sha256sum }}
+# f21-f24.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21-f24.json" | sha256sum }}
+# f21_aerospace.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21_aerospace.json" | sha256sum }}
+# f21_raycast.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21_raycast.json" | sha256sum }}
+# f22_neovim.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f22_neovim.json" | sha256sum }}
+# f23_chrome.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f23_chrome.json" | sha256sum }}
+# f23_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f23_kitty.json" | sha256sum }}
+# f24__global.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f24__global.json" | sha256sum }}
+# f24_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f24_kitty.json" | sha256sum }}
+
+source_karabiner_dir="{{ .chezmoi.sourceDir }}/dot_config/private_karabiner"
+target_karabiner_dir="{{ .chezmoi.homeDir }}/.config/karabiner"
+base_json="${source_karabiner_dir}/karabiner.base.json"
+order_file="${source_karabiner_dir}/complex-modification-order.txt"
+complex_modifications_dir="${source_karabiner_dir}/private_assets/private_complex_modifications"
+target_json="${target_karabiner_dir}/karabiner.json"
+
+notify_error() {
+  local message="$1"
+  /usr/bin/osascript -e "display notification \"${message}\" with title \"chezmoi karabiner\""
+}
+
+require_file() {
+  if [[ ! -f "$1" ]]; then
+    notify_error "Missing required file: $1"
+    echo "Missing required file: $1" >&2
+    exit 1
+  fi
+}
+
+require_file "$base_json"
+require_file "$order_file"
+command -v jq >/dev/null 2>&1 || {
+  notify_error "jq is required to generate karabiner.json."
+  echo "jq is required to generate karabiner.json." >&2
+  exit 127
+}
+
+tmp_complex_modifications="$(mktemp)"
+tmp_json="$(mktemp)"
+cleanup() {
+  rm -f "$tmp_complex_modifications" "$tmp_json"
+}
+trap cleanup EXIT
+
+printf '[]' > "$tmp_complex_modifications"
+
+while IFS= read -r complex_modification_file || [[ -n "$complex_modification_file" ]]; do
+  [[ -z "$complex_modification_file" || "$complex_modification_file" == \#* ]] && continue
+
+  complex_modification_path="${complex_modifications_dir}/${complex_modification_file}"
+  require_file "$complex_modification_path"
+
+  jq -e '.rules and (.rules | type == "array")' "$complex_modification_path" >/dev/null
+  jq -s '.[0] + .[1].rules' "$tmp_complex_modifications" "$complex_modification_path" > "${tmp_complex_modifications}.next"
+  mv "${tmp_complex_modifications}.next" "$tmp_complex_modifications"
+done < "$order_file"
+
+jq --slurpfile complex_modifications "$tmp_complex_modifications" \
+  '.profiles[0].complex_modifications.rules = $complex_modifications[0]' \
+  "$base_json" > "$tmp_json"
+
+jq empty "$tmp_json"
+mkdir -p "$target_karabiner_dir"
+
+if [[ -f "$target_json" ]] && cmp -s "$tmp_json" "$target_json"; then
+  exit 0
+fi
+
+mv "$tmp_json" "$target_json"
+echo "Generated ${target_json} from Complex Modification JSON files."
+
