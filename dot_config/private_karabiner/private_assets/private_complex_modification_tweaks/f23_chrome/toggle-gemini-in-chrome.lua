@@ -26,7 +26,8 @@ local function isTarget(element)
   local description = attributeValue(element, "AXDescription")
   local role = attributeValue(element, "AXRole")
 
-  return role == "AXButton" and (description == "Ask Gemini" or description == "Close Gemini in Chrome")
+  return role == "AXButton"
+    and (description == "Ask Gemini" or description == "Open Gemini in Chrome" or description == "Close Gemini in Chrome")
 end
 
 local function childrenFor(element)
