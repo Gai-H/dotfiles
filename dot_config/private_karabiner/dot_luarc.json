@@ -1,0 +1,10 @@
+{
+  "runtime.version": "LuaJIT",
+  "diagnostics": {
+    "globals": ["hs", "spoon"]
+  },
+  "workspace": {
+    "library": ["~/.config/hammerspoon/Spoons/EmmyLua.spoon/annotations"]
+  }
+}
+
