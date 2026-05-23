@@ -42,19 +42,6 @@
         },
         {
           "type": "basic",
-          "from": { "key_code": "g", "modifiers": { "mandatory": ["shift"], "optional": [] } },
-          "to": [{ "key_code": "g", "modifiers": ["command", "shift"] }],
-          "conditions": [
-            { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.google\\.Chrome$"] },
-            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
-            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
-            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
-            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
-          ]
-        },
-
-        {
-          "type": "basic",
           "from": { "key_code": "t", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "t", "modifiers": ["command"] }],
           "conditions": [
@@ -141,18 +128,6 @@
           "type": "basic",
           "from": { "key_code": "f", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "f", "modifiers": ["command"] }],
-          "conditions": [
-            { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.google\\.Chrome$"] },
-            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
-            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
-            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
-            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": { "key_code": "g", "modifiers": { "optional": [] } },
-          "to": [{ "key_code": "g", "modifiers": ["command"] }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.google\\.Chrome$"] },
             { "type": "variable_if", "name": "f23_virtual", "value": 1 },
