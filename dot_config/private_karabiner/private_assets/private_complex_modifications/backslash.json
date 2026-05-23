@@ -2,7 +2,7 @@
   "title": "Backslash",
   "rules": [
     {
-      "description": "international1 (alone) -> Option+¥ (Option+international3)",
+      "description": "international1 (alone) -> Right Option+¥ (Right Option+international3)",
       "manipulators": [
         {
           "type": "basic",
@@ -16,7 +16,7 @@
           "to": [
             {
               "key_code": "international3",
-              "modifiers": ["left_option"]
+              "modifiers": ["right_option"]
             }
           ]
         }
