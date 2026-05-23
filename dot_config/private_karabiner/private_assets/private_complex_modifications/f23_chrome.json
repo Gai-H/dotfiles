@@ -184,6 +184,22 @@
             { "type": "variable_if", "name": "f22_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 }
           ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "b", "modifiers": { "optional": [] } },
+          "to": [
+            {
+              "shell_command": "/opt/homebrew/bin/hs -c 'dofile(os.getenv(\"HOME\") .. \"/.config/karabiner/assets/complex_modification_tweaks/f23_chrome/toggle-vertical-tab-list-open-state.lua\")'"
+            }
+          ],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.google\\.Chrome$"] },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
         }
       ]
     }
