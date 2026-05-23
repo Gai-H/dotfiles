@@ -1,5 +1,6 @@
 backslash.json
 toggle-input.json
+right-modifiers-for-desktop.json
 f21-f24.json
 f21_aerospace.json
 f21_raycast.json
