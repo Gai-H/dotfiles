@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euo pipefail
+
+spoon_dir="{{ .chezmoi.homeDir }}/.config/hammerspoon/Spoons/EmmyLua.spoon"
+download_url="https://github.com/Hammerspoon/Spoons/raw/master/Spoons/EmmyLua.spoon.zip"
+
+if [[ -d "$spoon_dir" ]]; then
+  echo "EmmyLua.spoon already installed: $spoon_dir"
+  exit 0
+fi
+
+tmpdir="$(mktemp -d)"
+trap 'rm -rf "$tmpdir"' EXIT
+
+zipfile="$tmpdir/EmmyLua.spoon.zip"
+extract_dir="$tmpdir/extract"
+
+mkdir -p "$extract_dir" "$(dirname "$spoon_dir")"
+curl -fsSL "$download_url" -o "$zipfile"
+ditto -x -k "$zipfile" "$extract_dir"
+
+if [[ ! -d "$extract_dir/EmmyLua.spoon" ]]; then
+  echo "EmmyLua.spoon was not found in downloaded archive" >&2
+  exit 1
+fi
+
+mv "$extract_dir/EmmyLua.spoon" "$spoon_dir"
+echo "Installed EmmyLua.spoon: $spoon_dir"
