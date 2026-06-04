@@ -13,7 +13,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh close_window" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action close_window" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -31,7 +31,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh new_window" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action new_window" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -49,7 +49,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh previous_window" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action previous_window" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -67,7 +67,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh next_window" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action next_window" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -85,7 +85,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh close_tab" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action close_tab" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -103,7 +103,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh new_tab" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action new_tab" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -121,7 +121,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh previous_tab" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action previous_tab" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
@@ -139,7 +139,7 @@
               "optional": []
             }
           },
-          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/kitty.sh next_tab" }],
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action next_tab" }],
           "conditions": [
             { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
