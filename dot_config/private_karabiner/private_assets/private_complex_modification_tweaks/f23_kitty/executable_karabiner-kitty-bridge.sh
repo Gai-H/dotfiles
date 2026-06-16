@@ -6,14 +6,36 @@ notify() {
   /usr/bin/osascript -e "display notification \"${message}\" with title \"karabiner-kitty-bridge.sh\""
 }
 
-IFS=$'\t' read -r frontmost_app_bundle_id frontmost_app_pid <<< "$(
-  osascript -e '
-tell application "System Events"
-  set frontApp to first application process whose frontmost is true
-  return (bundle identifier of frontApp) & tab & (unix id of frontApp)
-end tell
-'
-)"
+get_frontmost_app_info() {
+  local front_token front_info
+
+  front_token="$(/usr/bin/lsappinfo front 2>/dev/null)" || return 1
+  front_info="$(/usr/bin/lsappinfo info "$front_token" 2>/dev/null)" || return 1
+
+  if [[ "$front_info" =~ 'bundleID="([^"]+)"' ]]; then
+    frontmost_app_bundle_id="${match[1]}"
+  elif [[ "$front_info" =~ 'CFBundleIdentifier"[[:space:]]*=[[:space:]]*"([^"]+)"' ]]; then
+    frontmost_app_bundle_id="${match[1]}"
+  else
+    return 1
+  fi
+
+  if [[ "$front_info" =~ '(^|[^[:alnum:]_])pid[[:space:]]*=[[:space:]]*([0-9]+)' ]]; then
+    frontmost_app_pid="${match[2]}"
+  elif [[ "$front_info" =~ '"pid"[[:space:]]*=[[:space:]]*([0-9]+)' ]]; then
+    frontmost_app_pid="${match[1]}"
+  else
+    return 1
+  fi
+}
+
+frontmost_app_bundle_id=""
+frontmost_app_pid=""
+
+if ! get_frontmost_app_info; then
+  notify "Failed to get frontmost app info (lsappinfo)."
+  exit 1
+fi
 
 if [[ -z "${frontmost_app_bundle_id:-}" || -z "${frontmost_app_pid:-}" ]]; then
   notify "Failed to get frontmost app info (bundle_id or pid missing)."
@@ -26,10 +48,8 @@ if [[ "$frontmost_app_bundle_id" != "net.kovidgoyal.kitty" ]]; then
 fi
 
 socket="unix:/tmp/kitty-$frontmost_app_pid"
-args="$*"
 
-if ! /opt/homebrew/bin/kitten --to "$socket" "$args" 2>/dev/null; then
-  notify "Failed to execute kitten (socket=$socket, args=$args)."
+if ! /opt/homebrew/bin/kitten @ --to "$socket" "$@" 2>/dev/null; then
+  notify "Failed to execute kitten (socket=$socket, args=$*)."
   exit 1
 fi
-
