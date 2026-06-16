@@ -147,6 +147,24 @@
             { "type": "variable_if", "name": "f23_virtual", "value": 1 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 }
           ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": [],
+              "optional": []
+            }
+          },
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh action kitten kittens/select-mode.py" }],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
         }
       ]
     }
