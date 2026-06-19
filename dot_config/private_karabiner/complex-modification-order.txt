@@ -5,8 +5,8 @@ f21-f24.json
 f21_aerospace.json
 f21_raycast.json
 f22_neovim.json
+f22_kitty_tmux.json
 f23_chrome.json
 f23_kitty.json
 f24__global.json
 f24_kitty.json
-
