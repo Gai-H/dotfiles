@@ -1,19 +1,20 @@
 {
-  "title": "F22_Neovim",
+  "title": "F22_Kitty_Neovim",
   "rules": [
     {
-      "description": "F22_Neovim",
+      "description": "F22_Kitty_Neovim",
       "manipulators": [
         {
           "type": "basic",
           "from": { "key_code": "j", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "j", "modifiers": ["option"] }],
           "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f22_virtual", "value": 1 },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
             { "type": "variable_if", "name": "f23_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 },
-            { "type": "variable_if", "name": "neovim_active", "value": true }
+            { "type": "variable_if", "name": "kitty_user-variables", "value": "{\"mode\":\"neovim\"}" }
           ]
         },
         {
@@ -21,11 +22,12 @@
           "from": { "key_code": "k", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "k", "modifiers": ["option"] }],
           "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f22_virtual", "value": 1 },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
             { "type": "variable_if", "name": "f23_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 },
-            { "type": "variable_if", "name": "neovim_active", "value": true }
+            { "type": "variable_if", "name": "kitty_user-variables", "value": "{\"mode\":\"neovim\"}" }
           ]
         },
         {
@@ -33,11 +35,12 @@
           "from": { "key_code": "w", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "w", "modifiers": ["option"] }],
           "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f22_virtual", "value": 1 },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
             { "type": "variable_if", "name": "f23_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 },
-            { "type": "variable_if", "name": "neovim_active", "value": true }
+            { "type": "variable_if", "name": "kitty_user-variables", "value": "{\"mode\":\"neovim\"}" }
           ]
         },
         {
@@ -45,11 +48,12 @@
           "from": { "key_code": "t", "modifiers": { "optional": [] } },
           "to": [{ "key_code": "t", "modifiers": ["option"] }],
           "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
             { "type": "variable_if", "name": "f22_virtual", "value": 1 },
             { "type": "variable_if", "name": "f21_virtual", "value": 0 },
             { "type": "variable_if", "name": "f23_virtual", "value": 0 },
             { "type": "variable_if", "name": "f24_virtual", "value": 0 },
-            { "type": "variable_if", "name": "neovim_active", "value": true }
+            { "type": "variable_if", "name": "kitty_user-variables", "value": "{\"mode\":\"neovim\"}" }
           ]
         }
       ]
