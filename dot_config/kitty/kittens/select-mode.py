@@ -7,7 +7,7 @@ from kitty.boss import Boss
 
 VARIABLE_KEY = "mode"
 VALIABLE_VALUE_NONE = "none"
-VARIABLE_VALUES = (VALIABLE_VALUE_NONE, "tmux")
+VARIABLE_VALUES = (VALIABLE_VALUE_NONE, "tmux", "neovim")
 CANCEL = "__cancel__"
 
 
