@@ -4,24 +4,24 @@ set -euo pipefail
 # Re-run when generation inputs change.
 # karabiner.base.json hash: {{ include "dot_config/private_karabiner/karabiner.base.json" | sha256sum }}
 # complex-modification-order.txt hash: {{ include "dot_config/private_karabiner/complex-modification-order.txt" | sha256sum }}
-# backslash.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/backslash.json" | sha256sum }}
-# toggle-input.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/toggle-input.json" | sha256sum }}
-# right-modifiers-for-desktop.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/right-modifiers-for-desktop.json" | sha256sum }}
-# f21-f24.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21-f24.json" | sha256sum }}
-# f21_aerospace.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21_aerospace.json" | sha256sum }}
-# f21_raycast.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f21_raycast.json" | sha256sum }}
-# f22_kitty_neovim.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f22_kitty_neovim.json" | sha256sum }}
-# f22_kitty_tmux.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f22_kitty_tmux.json" | sha256sum }}
-# f23_chrome.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f23_chrome.json" | sha256sum }}
-# f23_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f23_kitty.json" | sha256sum }}
-# f24__global.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f24__global.json" | sha256sum }}
-# f24_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/private_complex_modifications/f24_kitty.json" | sha256sum }}
+# backslash.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/backslash.json" | sha256sum }}
+# toggle-input.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/toggle-input.json" | sha256sum }}
+# right-modifiers-for-desktop.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/right-modifiers-for-desktop.json" | sha256sum }}
+# f21-f24.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f21-f24.json" | sha256sum }}
+# f21_aerospace.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f21_aerospace.json" | sha256sum }}
+# f21_raycast.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f21_raycast.json" | sha256sum }}
+# f22_kitty_neovim.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f22_kitty_neovim.json" | sha256sum }}
+# f22_kitty_tmux.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f22_kitty_tmux.json" | sha256sum }}
+# f23_chrome.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f23_chrome.json" | sha256sum }}
+# f23_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f23_kitty.json" | sha256sum }}
+# f24__global.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f24__global.json" | sha256sum }}
+# f24_kitty.json hash: {{ include "dot_config/private_karabiner/private_assets/exact_private_complex_modifications/f24_kitty.json" | sha256sum }}
 
 source_karabiner_dir="{{ .chezmoi.sourceDir }}/dot_config/private_karabiner"
 target_karabiner_dir="{{ .chezmoi.homeDir }}/.config/karabiner"
 base_json="${source_karabiner_dir}/karabiner.base.json"
 order_file="${source_karabiner_dir}/complex-modification-order.txt"
-complex_modifications_dir="${source_karabiner_dir}/private_assets/private_complex_modifications"
+complex_modifications_dir="${source_karabiner_dir}/private_assets/exact_private_complex_modifications"
 target_json="${target_karabiner_dir}/karabiner.json"
 
 notify_error() {
