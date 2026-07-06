@@ -16,25 +16,13 @@ KARABINER_CLI_TIMEOUT_SECONDS = 1.0
 NOTIFICATION_TITLE = "Kitty Karabiner watcher"
 
 
-def focused_window(boss: Boss) -> Optional[Window]:
-    return getattr(boss, "active_window", None)
-
-
-def user_vars_as_json(window: Optional[Window]) -> str:
-    user_vars = getattr(window, "user_vars", {}) if window is not None else {}
-    return json.dumps(user_vars, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
-
-
-def applescript_string(value: str) -> str:
-    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
-
-
-def notify(message: str) -> None:
+def notify_error(message: str) -> None:
+    escape_for_applescript = lambda s: s.replace("\\", "\\\\").replace('"', '\\"')
     script = (
         "display notification "
-        f"{applescript_string(message)} "
+        f"{escape_for_applescript(message)} "
         "with title "
-        f"{applescript_string(NOTIFICATION_TITLE)}"
+        f"{escape_for_applescript(NOTIFICATION_TITLE)}"
     )
     try:
         subprocess.run(
@@ -44,56 +32,63 @@ def notify(message: str) -> None:
             stderr=subprocess.DEVNULL,
             timeout=1.0,
         )
-    except Exception:
-        pass
+    except Exception as e:
+        print(e, file=sys.stderr)
 
 
-def set_karabiner_variable(value: str) -> None:
-    payload = json.dumps({KARABINER_VARIABLE_NAME: value}, ensure_ascii=False, separators=(",", ":"))
+def get_window_user_variables_string(window: Window) -> str:
+    user_variables = getattr(window, "user_vars", {})
+    window_user_variables_string = json.dumps(user_variables, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    return window_user_variables_string
+
+
+def get_karabiner_cli_payload_string(value: str) -> str:
+    karabiner_cli_payload = {KARABINER_VARIABLE_NAME: value}
+    karabiner_cli_payload_string = json.dumps(karabiner_cli_payload, ensure_ascii=False, separators=(",", ":"))
+    return karabiner_cli_payload_string
+
+
+def synchronize_window_user_variables(window: Optional[Window]) -> None:
+    karabiner_variable_value = get_window_user_variables_string(window) if window is not None else ""
+    karabiner_cli_payload_string = get_karabiner_cli_payload_string(karabiner_variable_value)
     try:
         subprocess.run(
-            [KARABINER_CLI_PATH, "--set-variables", payload],
+            [KARABINER_CLI_PATH, "--set-variables", karabiner_cli_payload_string],
             check=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             timeout=KARABINER_CLI_TIMEOUT_SECONDS,
         )
-    except Exception as exc:
-        message = f"failed to set Karabiner variable: {exc}"
+    except Exception as e:
+        message = f"failed to set Karabiner variable: {e}"
         print(message, file=sys.stderr)
-        notify(message)
-
-
-def set_karabiner_variable_in_worker(value: str) -> None:
-    thread = threading.Thread(
-        target=set_karabiner_variable,
-        args=(value,),
-        daemon=True,
-    )
-    thread.start()
-
-
-def synchronize_window(window: Optional[Window]) -> None:
-    set_karabiner_variable_in_worker(user_vars_as_json(window))
-
-
-def synchronize_focused_window(boss: Boss) -> None:
-    synchronize_window(focused_window(boss))
-
-
-def on_load(boss: Boss, data: dict[str, Any]) -> None:
-    synchronize_focused_window(boss)
-
+        notify_error(message)
 
 def on_focus_change(boss: Boss, window: Window, data: dict[str, Any]) -> None:
+    """
+    called from both the "From" window and the "To" window
+    data.focused (Bool): true if the window is the "To" window
+    """
     if data.get("focused"):
-        synchronize_window(window)
+        synchronize_window_user_variables(window)
 
 
 def on_set_user_var(boss: Boss, window: Window, data: dict[str, Any]) -> None:
+    """
+    called when a "user variable" is set or deleted on a window. Here
+    data will contain key and value
+    """
     if getattr(window, "is_focused", False):
-        synchronize_window(window)
+        synchronize_window_user_variables(window)
 
 
-def on_close(boss: Boss, window: Window, data: dict[str, Any]) -> None:
-    synchronize_focused_window(boss)
+def on_quit(boss: Boss, window: Window, data: dict[str, Any]) -> None:
+    """
+    called when kitty is about to quit. This is called in *global watchers*
+    only. It is called twice: once before the quit confirmation dialog is
+    shown (data['confirmed'] will be False) and once after the user has
+    confirmed quitting (data['confirmed'] will be True). Setting
+    data['aborted'] to True will abort the quit in both cases.
+    """
+    if data.get("confirmed"):
+        synchronize_window_user_variables(None)
