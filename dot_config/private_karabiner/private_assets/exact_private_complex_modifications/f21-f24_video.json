@@ -1,0 +1,67 @@
+{
+  "title": "F21-F24_Video",
+  "rules": [
+    {
+      "description": "F21-F24_Video",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "any": "key_code", "modifiers": { "optional": ["any"] } },
+          "to": [{ "from_event": true, "modifiers": ["left_option"] }],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.canva\\.affinity$",
+                "^com\\.seriflabs\\.affinity.*$",
+                "^com\\.blackmagic-design\\.DaVinciResolve.*$"
+              ]
+            },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "any": "key_code", "modifiers": { "optional": ["any"] } },
+          "to": [{ "from_event": true, "modifiers": ["left_control"] }],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.canva\\.affinity$",
+                "^com\\.seriflabs\\.affinity.*$",
+                "^com\\.blackmagic-design\\.DaVinciResolve.*$"
+              ]
+            },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "any": "key_code", "modifiers": { "optional": ["any"] } },
+          "to": [{ "from_event": true, "modifiers": ["left_command"] }],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.canva\\.affinity$",
+                "^com\\.seriflabs\\.affinity.*$",
+                "^com\\.blackmagic-design\\.DaVinciResolve.*$"
+              ]
+            },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}
