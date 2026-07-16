@@ -1,0 +1,34 @@
+{
+  "title": "F23_Obsidian",
+  "rules": [
+    {
+      "description": "F23_Obsidian",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "semicolon", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "semicolon", "modifiers": ["command"] }],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^md\\.obsidian$"] },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "hyphen", "modifiers": { "optional": [] } },
+          "to": [{ "key_code": "hyphen", "modifiers": ["command"] }],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^md\\.obsidian$"] },
+            { "type": "variable_if", "name": "f23_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f22_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ f21_raycast.json
 f22_kitty_neovim.json
 f22_kitty_tmux.json
 f23_chrome.json
+f23_obsidian.json
 f23_kitty.json
 f24__global.json
 f24_kitty.json
