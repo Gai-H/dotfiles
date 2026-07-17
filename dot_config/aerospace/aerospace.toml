@@ -140,7 +140,7 @@ run = 'move-node-to-workspace IDE'
 [[on-window-detected]]
 if.app-id = 'com.openai.codex'
 check-further-callbacks = true
-run = 'move-node-to-workspace Codex'
+run = 'move-node-to-workspace ChatGPT'
 
 # Anki
 [[on-window-detected]]
