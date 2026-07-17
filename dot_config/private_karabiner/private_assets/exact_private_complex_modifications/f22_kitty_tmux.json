@@ -19,6 +19,19 @@
         },
         {
           "type": "basic",
+          "from": { "key_code": "d", "modifiers": { "mandatory": [], "optional": [] } },
+          "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh send-key ctrl+b && ~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh send-key d" }],
+          "conditions": [
+            { "type": "frontmost_application_if", "bundle_identifiers": ["^net\\.kovidgoyal\\.kitty$"] },
+            { "type": "variable_if", "name": "f22_virtual", "value": 1 },
+            { "type": "variable_if", "name": "f21_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f23_virtual", "value": 0 },
+            { "type": "variable_if", "name": "f24_virtual", "value": 0 },
+            { "type": "variable_if", "name": "kitty_user-variables", "value": "{\"mode\":\"tmux\"}" }
+          ]
+        },
+        {
+          "type": "basic",
           "from": { "key_code": "t", "modifiers": { "mandatory": [], "optional": [] } },
           "to": [{ "shell_command": "~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh send-key ctrl+b && ~/.config/karabiner/assets/complex_modification_tweaks/f23_kitty/karabiner-kitty-bridge.sh send-text '%'" }],
           "conditions": [
