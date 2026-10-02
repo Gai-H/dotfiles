@@ -1,6 +1,7 @@
 local opt = vim.opt
 opt.clipboard:append("unnamedplus")
 opt.cursorline = true
+opt.diffopt:append("followwrap")
 opt.exrc = true
 opt.expandtab = true
 opt.ignorecase = true
