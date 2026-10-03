@@ -1,3 +1,12 @@
+os:
+  edit: >-
+    nvim --cmd 'let g:lazygit_diff = 1' -- {{filename}}
+  editAtLine: >-
+    nvim --cmd 'let g:lazygit_diff = 1' +{{line}} -- {{filename}}
+  editAtLineAndWait: >-
+    nvim --cmd 'let g:lazygit_diff = 1' +{{line}} -- {{filename}}
+  editInTerminal: true
+
 gui:
   tabWidth: 2
   theme:
