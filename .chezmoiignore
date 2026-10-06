@@ -1,1 +1,15 @@
 mise.local.toml
+README.md
+
+{{ if eq .profile "agent-sandbox" }}
+**
+!.config
+!.config/nvim
+!.config/nvim/**
+!.config/lazygit
+!.config/lazygit/**
+!.config/eza
+!.config/eza/**
+!.config/yazi
+!.config/yazi/*.toml
+{{ end }}
