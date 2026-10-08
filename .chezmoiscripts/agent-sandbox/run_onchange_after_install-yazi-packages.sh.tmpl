@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+# package.toml hash: {{ include "dot_config/yazi/package.toml" | sha256sum }}
+# yazi.toml hash: {{ include "dot_config/yazi/yazi.toml" | sha256sum }}
+# theme.toml hash: {{ include "dot_config/yazi/theme.toml" | sha256sum }}
+
+yazi_version="$(/usr/bin/yazi --version | awk '{print $2}')"
+ya_version="$(/usr/bin/ya --version | awk '{print $2}')"
+if [[ -z "$yazi_version" || "$yazi_version" != "$ya_version" ]]; then
+    printf 'install-yazi-packages: yazi and ya versions must match.\n' >&2
+    exit 1
+fi
+
+# Chezmoi has applied package.toml before this after_ script runs.
+export YAZI_CONFIG_HOME={{ joinPath .chezmoi.destDir ".config/yazi" | replace "'" "'\\''" | printf "'%s'" }}
+exec /usr/bin/ya pkg install

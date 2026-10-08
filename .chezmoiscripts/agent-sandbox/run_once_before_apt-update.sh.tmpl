@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+# Refresh APT before install-* scripts, on first apply and installer changes.
+# eza installer hash: {{ include ".chezmoiscripts/agent-sandbox/run_once_before_install-eza.sh" | sha256sum }}
+# lazygit installer hash: {{ include ".chezmoiscripts/agent-sandbox/run_once_before_install-lazygit.sh" | sha256sum }}
+# neovim installer hash: {{ include ".chezmoiscripts/agent-sandbox/run_once_before_install-neovim.sh" | sha256sum }}
+# yazi installer hash: {{ include ".chezmoiscripts/agent-sandbox/run_once_before_install-yazi.sh" | sha256sum }}
+sudo apt-get -o APT::Update::Error-Mode=any update

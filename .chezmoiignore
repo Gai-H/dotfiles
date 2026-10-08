@@ -12,4 +12,10 @@ README.md
 !.config/eza/**
 !.config/yazi
 !.config/yazi/*.toml
+!.chezmoiscripts
+!.chezmoiscripts/agent-sandbox
+!.chezmoiscripts/agent-sandbox/**
+{{ else }}
+.chezmoiscripts/agent-sandbox
+.chezmoiscripts/agent-sandbox/**
 {{ end }}
