@@ -1,5 +1,7 @@
 mise.local.toml
 README.md
+system
+system/**
 
 {{ if eq .profile "agent-sandbox" }}
 **
