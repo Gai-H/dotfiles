@@ -160,6 +160,12 @@ if.app-id = 'notion.id'
 check-further-callbacks = true
 run = 'move-node-to-workspace Notion'
 
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+check-further-callbacks = true
+run = 'move-node-to-workspace Obsidian'
+
 # Floating Windows
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
