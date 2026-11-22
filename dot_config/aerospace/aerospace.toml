@@ -161,10 +161,11 @@ check-further-callbacks = true
 run = 'move-node-to-workspace Notion'
 
 # Obsidian
+# The title is set after detection, so the script waits for it before moving.
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 check-further-callbacks = true
-run = 'move-node-to-workspace Obsidian'
+run = 'exec-and-forget ~/.config/aerospace/move-obsidian-window.sh'
 
 # Floating Windows
 [[on-window-detected]]
