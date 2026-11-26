@@ -1,0 +1,6 @@
+# 1Password SSH agent config
+# https://developer.1password.com/docs/ssh/agent/config/
+
+# Use SSH keys from all vaults in this account
+[[ssh-keys]]
+account = "my.1password.com"
