@@ -11,7 +11,7 @@ from kitty.window import Window
 
 
 KARABINER_VARIABLE_NAME = "kitty_user-variables"
-KARABINER_CLI_PATH = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
+KARABINER_CLI_PATH = "/Applications/Karabiner-Elements.app/Contents/Helpers/karabiner_cli"
 KARABINER_CLI_TIMEOUT_SECONDS = 1.0
 NOTIFICATION_TITLE = "Kitty Karabiner watcher"
 
